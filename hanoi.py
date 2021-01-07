@@ -4,8 +4,11 @@ Created on Thu Nov  5 19:42:39 2020
 
 @author: Stalik
 """
-#total no of moves
-#color towers on print(p1/p2/p3 color coding)
+#Suggestions for v2.0(introduction to colour printing on python)
+    #total no of moves
+    #color towers on print(p1/p2/p3 color coding)
+#Suggestions for v3.0(Graphical rep of hanoi towers)
+    #Actually able to display the towers and movement on shell using carriage return
 def printMove(fr, to):
     print('move from ' + str(fr) + ' to ' + str(to))
 
