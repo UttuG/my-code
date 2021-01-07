@@ -4,9 +4,7 @@ Created on Thu Nov  5 08:34:45 2020
 
 @author: Stalik
 """
-#exceptional handling
-#no of iterations
-#both
+
 def fib(x,dic):
     if x in dic:
         return dic[x]
