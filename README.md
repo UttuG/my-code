@@ -1,2 +1,1 @@
-# my-projects
-My personal projects and solutions
+My OCW and Hackerrank Code
