@@ -1,0 +1,58 @@
+import java.util.*;
+public class Hashset {
+ public static void main(String[] args){
+ // Creating First new HashSet
+ HashSet<Integer> set1 = new HashSet<Integer>();
+ 
+ // Add data to HashSet
+ set1.add(10);
+ set1.add(20);
+ 
+ // Duplicates not allowed in HashSet, so avoid by HashMap
+ set1.add(10);
+ set1.add(50);
+ 
+ // Create a iterator of type integer to iterate HashSet
+ Iterator<Integer> it = set1.iterator();
+ 
+ System.out.println("Iterate HashSet using iterator : ");
+ 
+ // Iterate HashSet with the help of hasNext() and next() method
+ while (it.hasNext()) {
+ // Print HashSet values
+ System.out.print(it.next()+" ");
+ }
+ 
+ //Printing First HashSet
+ System.out.println("\n\nFirst HashSet: "+set1);
+ 
+ //Check and print if the HashSet is empty or not
+ System.out.println("\nIs First HashSet empty? = "+set1.isEmpty());
+ 
+ // Creating Second new HashSet
+ HashSet<Integer> set2 = new HashSet<Integer>();
+ 
+ // Add data to HashMap
+ set2.add(10);
+ set2.add(30);
+ set2.add(40);
+ set2.add(50);
+ 
+ //Printing Second HashSet
+ System.out.println("\nSecond HashSet: "+set2);
+ 
+ //Retain all the same elements of set1 and set2 in set2
+ set2.retainAll(set1);
+ 
+ //Printing set2 retaining only same elements as set1
+ System.out.println("Second HashSet(after using retainA() with set1): "+set2);
+ //Using clear method to remove all elements from the HashSet2
+ set2.clear();
+ 
+ //Check and print if the HashSet is empty or not
+ System.out.println("\nIs First HashSet empty? = "+set1.isEmpty());
+ System.out.println("\nIs Second HashSet empty? = "+set2.isEmpty());
+ }
+}
+ }
+}

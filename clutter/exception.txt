@@ -1,0 +1,137 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class invalidage extends Exception{
+	public invalidage(String str){
+		super(str);
+	}
+}
+class agenotwithinrange extends Exception{
+	public agenotwithinrange(String str){
+		super(str);
+	}
+}
+class namenotvalid extends Exception{
+	public namenotvalid(String str){
+		super(str);
+	}
+}
+
+
+class emp{
+	int eid;
+	String name;
+	int age;
+	
+	emp(int i,String s,int a)throws Exception{
+		if(a<25||a>60){
+			throw new agenotwithinrange("age is not valid for this company");
+		}
+		else{
+			System.out.println("age is valid...");
+		}
+		for(int k = 0;i<s.length();i++){ 
+		if(s.charAt(k)<'a'||s.charAt(k)>'z'){
+			throw new namenotvalid("Name shouldn't have any other special character");
+		}}
+			System.out.println("name is valid...");
+			eid=i;age=a;name=s;
+}
+}
+public class ass_6 {
+		
+	
+	static void validate(int age)throws Exception{
+		if(age<18){
+			throw new invalidage("age is not valid to vote");
+		}
+		else{
+			System.out.println("welcome to vote...");
+		}
+	}
+	
+	
+	
+//	static int sum(int num1,int num2){
+//		if(num1==0||num2==0){
+//			throw new ArithmeticException("either of the no. is 0");
+//		}
+//		else{
+//			System.out.println("both parameter are correct.");
+//		}
+//		return num1+num2;
+//	}
+	
+	
+	
+//	public static void method() throws FileNotFoundException{
+//		// TODO Auto-generated method stub
+//		FileReader file = new
+//		FileReader("C:\\Users\\Desktop\\abc.txt");
+//		BufferedReader fileInput = new BufferedReader(file);
+//		throw new FileNotFoundException();
+//		Scanner sc= new Scanner(System.in);
+//		System.out.println("enter two no.");
+//		int num1= sc.nextInt();
+//		int num2= sc.nextInt();
+//		int res = sum(num1,num2);
+//	}
+	
+	
+	
+		public static void main(String[] args) throws Exception{
+			
+			
+
+			Scanner sc= new Scanner(System.in);
+			try{
+			emp obj1 = new emp(415,"vedant4",610);
+			}
+			catch(agenotwithinrange ll){
+				System.out.println("\nexception : " +ll);
+			}
+			catch(namenotvalid pp){
+				System.out.println("\nexception : " +pp);
+				}
+////			
+//			  try {
+//				  System.out.println("enter two no.");
+//					int num1= sc.nextInt();
+//					int num2= sc.nextInt(); 
+//					if(num1==0||num2==0){
+//						throw new ArithmeticException("either of the no. is 0");
+//					}
+//					else{
+//						System.out.println("both parameter are correct.");
+//					}
+//		         } 
+//		         catch (InputMismatchException ex) {
+//		            System.out.println("We have given input excepting integer "+ ex);
+//		         }
+			
+			
+			
+			
+//			try{
+//				validate(13);
+//			}
+//			catch(Exception e){
+//				e.printStackTrace();
+//				System.out.println("next statement "+e);
+//		}
+//		
+//			try{
+//
+//				System.out.println(num1+" / "+ num2+" = "+(num1/num2));
+//			}
+//			catch(ArithmeticException e){
+//				System.out.println("divided by zero");
+//			}
+//			catch(Exception e){
+//				System.out.println("divided by zero");
+//			}
+	}
+
+}

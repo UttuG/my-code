@@ -1,0 +1,34 @@
+public class Assg3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		piano pi = new piano();
+		flute fl=new flute();
+		guitar gu=new guitar();
+		pi.play();
+		fl.play();
+		gu.play();
+	}
+
+}
+abstract class Instrument{
+	abstract void play();
+}
+class piano extends Instrument{
+	void play(){
+		System.out.println("piano is playing tan tan tan");
+	}
+}
+class flute extends Instrument{
+	void play(){
+		System.out.println("flute is playing tan tan tan");
+	}
+}
+class guitar extends Instrument{
+	void play(){
+		System.out.println("guitar is playing tan tan tan");
+	}
+}

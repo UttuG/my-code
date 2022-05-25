@@ -1,0 +1,33 @@
+public class Assg3B {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		twowheeler obj =new twowheeler();
+		obj.totaldistance();
+		obj.speed();
+	}
+
+}
+interface motorbike{
+	int speed=10;
+	public void totaldistance();
+	
+}
+interface cycle{
+	int distance=10;
+	public void speed();
+}
+class twowheeler implements motorbike,cycle{
+	public void totaldistance(){
+		int total = distance+50;
+		System.out.println("Total Distance Travelled "+total);
+	}
+	public void speed(){
+		float avg=(speed+50)/2;
+		System.out.println(" Average speed maintained "+avg);
+	}
+	
+}

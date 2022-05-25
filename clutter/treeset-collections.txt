@@ -1,0 +1,56 @@
+import java.util.*;
+public class PS3_Active_Learning {
+public static void main(String[] args) {
+// Creation of a treeSet
+TreeSet<String> treeSet1 = new TreeSet<>();
+// Adding colors to the string
+treeSet1.add("Pink");
+treeSet1.add("Black");
+treeSet1.add("White");
+treeSet1.add("Green");
+treeSet1.add("Blue");
+treeSet1.add("Yellow");
+// Printing the treeSet
+Iterator<String> iterator = treeSet1.iterator();
+while (iterator.hasNext()) {
+System.out.println(iterator.next());
+}
+// Creating another TreeSet
+TreeSet<String> treeSet2 = new TreeSet<>();
+// Adding elements to a tree set
+treeSet2.add("Cat");
+treeSet2.add("Dog");
+treeSet2.add("Tiger");
+treeSet2.add("Lion");
+treeSet2.add("Wolf");
+// Adding TreeSet2 to TreeSet1
+System.out.println("TreeSet1: " + treeSet1 + "\nTreeSet2: " + treeSet2);
+System.out.println(treeSet1.addAll(treeSet2));
+System.out.println("TreeSet1 after adding elements of TreeSet2 to it: " + treeSet1);
+// Number of elements in the treeSet
+System.out.println("Number of elements in treeSet1: " + treeSet1.size());
+System.out.println("Number of elements in treeSet2: " + treeSet2.size());
+// Creating a treeSet with numbers
+TreeSet<Integer> treeSet3 = new TreeSet<>();
+TreeSet<Integer> treeheadset = new TreeSet<>();
+// Adding numbers in treeSet3
+treeSet3.add(32);
+treeSet3.add(2);
+treeSet3.add(98);
+treeSet3.add(0);
+treeSet3.add(231);
+treeSet3.add(4);
+treeSet3.add(5);
+treeSet3.add(7);
+// Displaying treeSet3
+System.out.println("TreeSet3: " + treeSet3);
+// Finding numbers less than 7
+treeheadset = (TreeSet<Integer>) treeSet3.headSet(7);
+System.out.println("Numbers less than 7 are: " + treeheadset);
+// Removing an element from the treeSet
+treeSet1.remove("Black");
+treeSet1.remove("Wolf");
+treeSet1.remove("Lion");
+System.out.println("New tree set after removing few elements from treeSet1: " + treeSet1);
+}
+}

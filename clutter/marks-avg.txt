@@ -1,0 +1,103 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+
+public class javastu {
+
+	public static void main(String[] args) throws IOException {
+	InputStreamReader isr = new InputStreamReader(System.in);
+	BufferedReader buffer = new BufferedReader(isr);
+	
+	FileWriter file = new FileWriter("/home/student/Desktop/Sample.txt");
+	BufferedWriter buffer1 = new BufferedWriter(file);
+	
+	System.out.println("Enter number of students: ");
+	int stud = Integer.parseInt(buffer.readLine());
+	int[] marks = new int[5];
+	int[] total = new int[stud];
+	int[] avg = new int[stud];
+	for(int i=0;i<stud;i++)
+	{
+	total[i]=0;	
+	}
+	
+	
+	String[] marks1 = new String[5];
+	String[] name = new String[stud];
+	String[] avg1 = new String[stud];
+	String[] grade = new String[stud];
+	String[] roll = new String[stud];
+	
+	for(int i=0;i<stud;i++)
+	{
+		System.out.println("Enter the name of students: ");
+		name[i]= buffer.readLine();
+		buffer1.write(name[i]);
+		
+		System.out.println("Enter the roll number of students: ");
+		roll[i]= buffer.readLine();
+		buffer1.write(roll[i]);
+		
+		for(int j=0;j<5;j++)
+		{
+			System.out.println("Enter the marks for the subject" +(j+1) + ":");
+			marks[j] = Integer.parseInt(buffer.readLine());
+			total[i] += marks[j];
+			marks1[j] = Integer.toString(marks[j]);
+			buffer1.write(marks1[j]);
+			
+			
+		}
+		avg[i]= total [i]/5;
+		if(avg[i] >= 70 && avg[i] <=100)
+		{
+			//System.out.println("Grade A");
+			grade[i] = "A";
+			buffer1.write(grade[i]);
+		}
+		
+		else if(avg[i] >= 50 && avg[i] <=69)
+		{
+			grade[i] = "B";
+			buffer1.write(grade[i]);
+		}
+		
+		else if(avg[i] >= 33 && avg[i] <=49)
+		{
+			grade[i] = "C";
+			buffer1.write(grade[i]);
+		}
+		
+		else
+		{
+			grade[i] = "D";
+			buffer1.write(grade[i]);
+		}
+		
+		System.out.println("Your grade is: \n" +grade[i]);
+		
+		
+		
+	}
+	buffer.close();
+	buffer1.close();
+	file.close();
+	FileReader f1 = new FileReader("Sample.txt");
+	FileWriter f2 = new FileWriter("Sample.txt",true);
+	//BufferedReader buffer2 = new BufferedReader(f1);
+	int temp;
+	while((temp = f1.read()) !=-1){
+		//f2.write((char)temp);
+	System.out.println((char)temp);
+	}
+	
+	
+	f1.close();
+	f2.close();
+	
+	
+	
+	}
+
+}

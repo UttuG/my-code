@@ -1,0 +1,56 @@
+public class Hill {
+
+	
+	public static void main(String[] args) {
+		Hillstation h1;
+		Shimla s1 = new Shimla();
+		h1=s1;
+		h1.location();
+		h1.famousfor();
+		Maha m1 = new Maha();
+		h1=m1;
+		m1.location();
+		m1.famousfor();
+		Munnar l1 = new Munnar();
+		h1=l1;
+		l1.location();
+		l1.famousfor();
+		
+
+	}
+
+}
+class Hillstation{
+	void location(){
+		System.out.println("India");
+	}
+	void famousfor(){
+		System.out.println("cold weather");
+	}
+}
+class Maha extends Hillstation{
+	void location(){
+		System.out.println("Mahabaleshwar is located in Satara");
+	}
+	void famousfor(){
+		System.out.println("Mahabaleshwar is famous for Strawberry");
+	}
+
+}
+class Munnar extends Hillstation{
+	void location(){
+		System.out.println("Munnar is located in Kerala");
+	}
+	void famousfor(){
+		System.out.println("Munnar is famous for tea production");
+	}
+}
+
+class Shimla extends Hillstation{
+	void location(){
+		System.out.println("Shimla is located in Himachal Pradesh");
+	}
+	void famousfor(){
+		System.out.println("Shimla is famous for snow");
+	}
+}

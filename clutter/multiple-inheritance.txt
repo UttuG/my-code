@@ -1,0 +1,53 @@
+package problemStatement17;
+public class Practicalexam {
+static int static_number = 106;
+int otherno = 555;
+public static void main(String[] args) {
+Child object = new Child();
+object.eyes();
+object.height();
+object.motherinterface();
+object.colour();
+object.beard();
+object.fatherinterface();
+System.out.println("The Static Variable is: "+static_number);
+// System.out.println("The other variable is: "+otherno);
+System.out.println("The above comment shows an error as we can't access the nonstatic number inside our main function");
+final int final_var = 5;
+System.out.println("The Final Variable is: "+final_var);
+// final_var = 10;
+// System.out.println("Updated Final Variable: " +final_var);
+System.out.println("The above comment will throw an error as we can't change the value 
+of final variable");
+}
+}
+interface Mother {
+void eyes();
+void colour();
+void motherinterface();
+}
+interface Father {
+void height();
+void beard();
+void fatherinterface();
+}
+class Child implements Mother,Father {
+public void eyes() {
+System.out.println("Blue eyes");
+}
+public void height() {
+System.out.println("Height is 6 feet");
+}
+public void motherinterface() {
+System.out.println("The above methods are from mother interface");
+}
+public void colour() {
+System.out.println("Brown Coloured");
+}
+public void beard() {
+System.out.println("Normal beard");
+}
+public void fatherinterface() {
+System.out.println("The above methods are from father interface")
+}
+}

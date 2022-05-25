@@ -1,0 +1,75 @@
+import java.util.*;
+public class Final {
+//Java Assignment 2
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+	
+		int ch;
+		do{
+		System.out.println("\nMENU\n");
+		System.out.println("1. Full time employee\n");
+		System.out.println("2. Intern employee\n");
+		System.out.println("3. Exit\n");
+		System.out.println("Enter your choice\n");
+		ch=sc.nextInt();
+		switch(ch){
+		case 1:
+			Employee emp = new Employee();
+			emp.getdata();
+			emp.dispsalary();
+			Fulltimeemployee ft = new Fulltimeemployee();
+			ft.calc();
+			break;
+		case 2:
+			Employee emp1 = new Employee();
+			emp1.getdata();
+			emp1.dispsalary();
+			Internemployee it = new Internemployee();
+			it.calc();
+			break;
+		case 3:
+			System.out.println("Exiting...");
+			break;
+		default:
+			System.out.println("\nInvalid Input");
+			break;
+		}
+		}while (ch !=3);
+		
+	}
+
+}
+class Employee{
+	double base = 1000;
+	String name;
+	void getdata(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name");
+		name=sc.nextLine();
+	}
+	void dispsalary(){
+		System.out.println("Name: "+name);
+		System.out.println("Original Salary is "+base);
+	}
+}
+class Fulltimeemployee extends Employee{
+	double fin;
+	void calc(){
+		//dispsalary();
+		fin= (base*0.5) + (base);
+		System.out.println("Final Salary for Full time employee: "+fin);
+	}
+}
+class Internemployee extends Employee{
+	double fin;
+	void calc(){
+		//dispsalary();
+		fin= (base*0.25) + (base);
+		System.out.println("Final Salary for Intern employee: "+fin);
+	}
+}
