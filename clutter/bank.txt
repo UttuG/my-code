@@ -1,0 +1,154 @@
+import java.util.*;
+class mininterest extends Exception{
+mininterest(){
+super("interest rate is low");
+}
+}
+interface Rbi{
+int mininterestrate=4;
+long minimumbalance=300000,
+maxwithdrawallimit=20000;
+void checkminbalance();
+void checkmaxwithdrawallimit();
+}
+interface Account extends Rbi{
+String bankname="";
+long accno= 00000000;
+long balance=0;
+long withdrawalamount=0;
+}
+class SBI implements Account{
+int interestRate;
+String name;
+long accountno;
+long balance;
+long withdrawalamount;
+SBI(int Intrate,String Name,long accno,long balance,long withdrawalamount){
+this.interestRate=Intrate;
+this.name=Name;
+this.accountno= accno;
+this.balance=balance;
+this.withdrawalamount=withdrawalamount;
+checkmaxwithdrawallimit();
+}
+public void printDetails() {
+System.out.println("bankname:"+bankname);
+System.out.println("name of account holder:"+name);
+System.out.println("accountno:"+accountno);
+System.out.println("withdrawal amont:"+withdrawalamount);
+System.out.println("interest rate:"+interestRate);
+}
+public void checkminbalance() {
+try {
+if(balance<minimumbalance) {
+throw new Exception("current blanace is less than minimum balance");
+}
+}catch(Exception e) {
+System.out.println(e);
+}
+}
+public void 
+checkmaxwithdrawallimit() {
+try {
+if (withdrawalamount>maxwithdrawallimit) {
+}
+}catch (Exception e) {
+System.out.println(e);
+}
+}
+}
+class PNB implements Account{
+String bankname="Pnb";
+int interestRate;
+String name;
+long accountno;
+long balance;
+long withdrawalamount;
+PNB(int Intrate,String Name,long accno,long balance,long withdrawalamount){
+this.interestRate=Intrate;
+this.name=Name;
+this.accountno= accno;
+this.balance=balance;
+this.withdrawalamount=withdrawalamount;
+checkmaxwithdrawallimit();
+}
+public void printDetails() {
+System.out.println("bankname:"+bankname);
+System.out.println("name of account holder:"+name);
+System.out.println("accountno:"+accountno);
+System.out.println("withdrawal amont:"+withdrawalamount);
+System.out.println("interest rate:"+interestRate);
+}
+public void checkminbalance() {
+try {
+if(balance<minimumbalance) {
+throw new Exception("current blanace is less than minimum balance");
+}
+}catch(Exception e) {
+System.out.println(e);
+}
+}
+public void 
+checkmaxwithdrawallimit() {
+try {
+if (withdrawalamount>maxwithdrawallimit) {
+}
+}catch (Exception e) {
+System.out.println(e);
+}
+}
+}
+class ICICI implements Account{
+String bankname="ICICI";
+int interestRate;
+String name;
+long accountno;
+long balance;
+long withdrawalamount;
+ICICI(int Intrate,String Name,long accno,long balance,long withdrawalamount){
+this.interestRate=Intrate;
+this.name=Name;
+this.accountno= accno;
+this.balance=balance;
+this.withdrawalamount=withdrawalamount;
+checkmaxwithdrawallimit();
+}
+public void printDetails() {
+System.out.println("bankname:"+bankname);
+System.out.println("name of account holder:"+name);
+System.out.println("accountno:"+accountno);
+System.out.println("withdrawal amont:"+withdrawalamount);
+System.out.println("interest rate:"+interestRate);
+}
+public void checkminbalance() {
+try {
+if(balance<minimumbalance) {
+throw new Exception("current blanace is less than minimum balance");
+}
+}catch(Exception e) {
+System.out.println(e);
+}
+}
+public void 
+checkmaxwithdrawallimit() {
+try {
+if (withdrawalamount>maxwithdrawallimit) {
+}
+}catch (Exception e) {
+System.out.println(e);
+}
+}
+}
+public class bank{
+public static void main(String[]args) {
+SBI account=new SBI(2,"Ankit",1032201304,1000,500000);
+account.printDetails();
+System.out.println("\n\n");
+PNB acc=new PNB(2,"shreyas",1032201305,1000,400000);
+acc.printDetails();
+System.out.println("\n\n");
+ICICI acc1=new ICICI(2,"kaustubh",1032201307,1000,600000);
+acc1.printDetails();
+System.out.println("\n\n");
+}
+}

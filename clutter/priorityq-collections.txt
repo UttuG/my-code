@@ -1,0 +1,115 @@
+import java.io.*;
+import java.util.*;
+public class Priority_Queue {
+public static void main(String[] args) throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+// TODO Auto-generated method stub
+char cont='y';
+do
+{
+System.out.println("MENU\n1.add \n2.insert\n3.remove \n4.compare
+\n5.convert \n6.Exit");
+int ch=Integer.parseInt(br.readLine());
+//Create a priority queue
+PriorityQueue<String> a=new PriorityQueue<String>();
+PriorityQueue<String> c = new PriorityQueue<String>();
+switch(ch)
+{
+case 1:
+{
+//add elements bin priority queue
+// a.add("sid");
+// a.add("ata");
+// a.add("harr");
+System.out.println("Enter the number of elements to be
+added");
+int n=Integer.parseInt(br.readLine());
+for(int i=0;i<n;i++)
+{
+System.out.println("Enter the element: ");
+a.add(br.readLine());
+}
+System.out.println("** Creating 1st priority Queue ");
+//print elements of queue
+System.out.println("The First priority queue is as follows:- "+a);
+System.out.println("\n");
+break;
+}
+case 2:
+{
+//add elements to queue
+System.out.println("Enter the element: ");
+String b=br.readLine();
+a.add(b);
+System.out.println("The First priority queue is as follows:- "+a);
+System.out.println("\n");
+break;
+}
+case 4:
+{
+System.out.println("** Creating 2nd priority Queue ");
+//creating a new priority queue
+// c.add("A");
+// c.add("ata");
+// c.add("B");
+System.out.println("Enter the number of elements to be added");
+int n=Integer.parseInt(br.readLine());
+for(int i=0;i<n;i++)
+{
+System.out.println("Enter the element: ");
+c.add(br.readLine());
+}
+System.out.println("The Second Priority Queue is::" + c);
+System.out.println("\n");
+System.out.println("**Comparing to priority Queue");
+// compare two priority queue
+for(String e:a)
+{
+if(c.contains(e))
+{
+System.out.println("Yes The element "+e+ " is in
+Queue 2 ");
+}
+else
+{
+System.out.println("No The element "+e+ " is not in
+Queue 2 ");
+}
+}
+System.out.println("\n");
+break;
+}
+// remove the element from priority Queue
+case 3:
+{
+System.out.println("** Removing all the elements in priority
+queue");
+a.clear();
+System.out.println("The Second Priority Queue after removing all
+the elements is::" + a);
+System.out.println("\n");
+break;
+}
+//convert queue to array
+case 5:
+{
+System.out.println("** Converting Queue to Array ");
+Object[] arr=c.toArray();
+System.out.println("The array is as follows:-");
+for(int i=0;i<arr.length;i++)
+{
+System.out.println("At index "+ i +" "+arr[i]);
+}
+System.out.println("\n");
+break;
+}
+case 6:
+{
+cont='n';
+break;
+}
+}
+}while(cont=='y');
+}
+}

@@ -1,0 +1,190 @@
+import java.lang.*;
+import java.util.*;
+
+class calculatorthread extends Thread {
+	float num1,num2,add,sub,div,mul;
+	String operation;
+	calculatorthread(String opr,float n1,float n2){
+		operation = opr;
+		num1 = n1;
+		num2 = n2;
+	}
+	public void run(){
+		if(operation == "add"){
+			try{
+//				System.out.println("performing "+ operation +" on "+num1+" and "+num2);
+				add = num1 + num2; 
+				System.out.println(num1 +" + "+num2+" = "+add);
+				}
+			catch(Exception e){
+				System.out.println("Caught");
+			}
+		}	
+		if(operation == "sub"){
+			try{
+//				System.out.println("performing "+ operation +" on "+num1+" and "+num2);
+				sub = num1 - num2; 
+				System.out.println(num1 +" - "+num2+" = "+sub);
+				}
+			catch(Exception e){
+				System.out.println("Caught");
+			}
+		}
+		if(operation == "div"){
+			try{
+				//System.out.println("performing "+ operation +" on "+num1+" and "+num2);
+				div = num1 / num2; 
+				System.out.println(num1 +" / "+num2+" = "+div);
+				}
+			catch(ArithmeticException e){
+				System.out.println("Caught");
+			}
+		}
+		if(operation == "mul"){
+			try{
+				//System.out.println("performing "+ operation +" on "+num1+" and "+num2);
+				mul = num1 * num2;
+				System.out.println(num1 +" * "+num2+" = "+mul); 
+				}
+			catch(Exception e){
+				System.out.println("Caught");
+			}
+		}
+	}
+}
+
+
+class printnos implements Runnable {
+	public void print_odd(){
+		try{
+			for(int i = 1 ; i <= 50 ; i+=2){
+			System.out.println(i);
+			Thread.sleep(59);
+			}
+		}
+		catch(Exception e){
+			System.out.println("Caught");
+		}
+	}
+	public void print_even(){
+		try{
+			for(int i = 2 ; i <= 50 ; i+=2){
+			System.out.println(i);
+			Thread.sleep(60);
+			}
+		}
+		catch(Exception e){
+			System.out.println("Caught");
+		}
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+
+class hi extends Thread {
+	public void run()
+	{
+		try
+		{
+			for(int i = 1 ; i <= 50 ; i+=2){
+			System.out.println(i*i);
+			Thread.sleep(60);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Caught");
+		}
+	}
+}
+class hello extends Thread {
+	public void run()
+	{
+		try
+		{
+			for(int i = 2 ; i <= 50 ; i+=2){
+			System.out.println(i*i);
+			Thread.sleep(60);
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Caught");
+		}
+	}
+}
+class square_of {
+	public void run()
+	{
+		try
+		{
+			for(int i = 1 ; i <= 50 ; i++){
+			System.out.println(i*i);
+			Thread.sleep(60);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Caught");
+		}
+	}
+}
+	public class multi 
+	{
+	public static void main(String args[]) 
+	{
+		double start,end,result;
+		float num1 , num2;
+		//*****************//
+//		start = System.currentTimeMillis();
+//		hi obj = new hi();
+//		hello obb = new hello();
+//		obj.start();
+//		obb.start();
+//		try{obb.join();}catch(Exception l){}
+//		end = System.currentTimeMillis();
+//		result = end - start;
+//		System.out.println("time by treads :: "+result);
+//		
+//		start = System.currentTimeMillis();
+//		square_of ojj = new square_of();
+//		ojj.run();
+//		end = System.currentTimeMillis();
+//		result = end -start;
+//		System.out.println("time by class square_of :: "+result);
+		//*****************//
+//		final printnos tt= new printnos();
+//		Thread t =new Thread(
+//				new Runnable(){
+//					public void run(){
+//						tt.print_odd();
+//						}
+//					});
+//		Thread t1 =new Thread(
+//				new Runnable(){
+//					public void run(){
+//						tt.print_even();
+//						}
+//					});
+//		t.start();
+//		t1.start();
+		//*****************//
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter first no. :: ");
+		num1 = sc.nextInt();
+		System.out.print("Enter second no :: ");
+		num2 = sc.nextInt();
+		calculatorthread c1 = new calculatorthread("add",num1,num2);
+		calculatorthread c2 = new calculatorthread("sub",num1,num2);
+		calculatorthread c3 = new calculatorthread("mul",num1,num2);
+		calculatorthread c4 = new calculatorthread("div",num1,num2);
+		c1.start();
+		c2.start();
+		c3.start();
+		c4.start();
+	}
+	}

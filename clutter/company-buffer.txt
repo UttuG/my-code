@@ -1,0 +1,47 @@
+package company_database;
+//importing the File class
+import java.io.File;
+//importing the fileOutputStream class
+import java.io.FileOutputStream;
+//importing the FileReader, BufferedReader and IOException class
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+class index {
+public static void main(String[] args) throws IOException {
+System.out.println("welcome to ABC private limited. ");
+System.out.println("creating database for company. ");
+// create a file object
+File file = new File("database.txt");
+try {
+ // create a new file
+ boolean value = file.createNewFile();
+ if (value) {
+ System.out.println("database is created.");
+ }
+ else {
+ System.out.println("The file already exists.");
+ }
+ FileOutputStream fout = new FileOutputStream("database.txt");
+ String data = "ABC private limited employees list \n\nBhavesh Joshi 
+\nProgrammer \n \nPankaj Tripathi \nSales Manager \n \nMadhuri Dixit \nHR";
+ byte[] array = data.getBytes();
+ fout.write(array);
+ System.out.println("Data is written to the file.");
+ fout.close();
+}
+catch(Exception e) {
+ e.getStackTrace();
+}
+System.out.println("reading data... \n\n.");
+try (BufferedReader br = new BufferedReader(new FileReader("database.txt"))) {
+ for(String line; (line = br.readLine()) != null; ) {
+ System.out.println(line);
+ }
+ 
+}
+catch(Exception e) {
+ e.getStackTrace();
+}
+}
+}

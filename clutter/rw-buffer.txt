@@ -1,0 +1,30 @@
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+
+public class java4 {
+
+	public static void main(String[] args) throws Exception 
+	{
+		FileReader fr = new FileReader("/home/student/Desktop/Sourcefile.txt");
+		FileWriter fw = new FileWriter("/home/student/Desktop/Targetfile.txt");
+		BufferedReader br = new BufferedReader(fr);
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		String i;
+		i = br.readLine();
+		//while((i = br.read()) !=-1)
+		//br.readLine();
+		bw.write((String)i);
+		System.out.println((String)i);
+			
+		
+		br.close();
+		bw.close();
+		fr.close();
+		fw.close();
+		
+	}
+
+}

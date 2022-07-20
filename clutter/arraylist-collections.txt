@@ -1,0 +1,100 @@
+import java.util.*;
+public class main {
+public static void main(String[] args) {
+//Creating an empty array list
+ArrayList<Integer> List1 = new ArrayList<Integer>();
+int flag=1;
+System.out.println("\tGROUP MEMBERS:\n1.Parvez Ahmed [PA31]\n2.Vipanshu 
+Agrawal [PA32]\n3.Siddharth Hulyalkar [PA43]\n4.Utkarsh Gupta [PA44]\n");
+System.out.println("PROBLEM STATEMENT 1\n");
+System.out.println("--------------------------------------------------");
+System.out.println("\tWELCOME TO THE ARRAYLIST PROGRAM");
+System.out.println("--------------------------------------------------");
+while(flag==1){
+Scanner input = new Scanner(System.in);
+System.out.println("\tMENU\n1.Input Elements\n2.Insert an 
+element\n3.Retrieve element\n4.Copy List\n5.Swap elements\n6.Print 
+ArrayList\n7.EXIT\n");
+System.out.println("Enter choice: ");
+int choice = input.nextInt();
+switch(choice){
+//Taking input in the list
+case 1:
+try{
+System.out.println("Enter no. of elements: ");
+int n = input.nextInt();
+System.out.println("Enter elements: ");
+for (int i=0;i<n;i++){
+List1.add(input.nextInt());
+}
+System.out.println("The list you entered is: " +List1);
+}
+catch(Exception e){
+System.out.println(e);
+}
+break;
+//Inserting elements at a specified index
+case 2:
+try{
+int m[] = new int[2];
+System.out.println("Enter index and element: ");
+for(int i=0;i<2;i++){
+m[i]=input.nextInt();
+}
+List1.add(m[0],m[1]);
+System.out.println("The list after inserting element at 
+index "+ m[0]+ " is: "+List1);
+}
+catch(Exception e){
+System.out.println(e);
+}
+break;
+//Retrieving element from specified index
+case 3:
+try{
+System.out.println(List1);
+System.out.println("Enter index: ");
+int index = input.nextInt();
+System.out.println("Element at index " + index + " is 
+:"+List1.get(index));
+}
+catch(Exception e){
+System.out.println(e);
+}
+break;
+//Creating an empty ArrayList and copying the first list into it
+case 4:
+ArrayList<Integer> List2 = new ArrayList<Integer>(List1);
+System.out.println("The new list after copying is: "+ List2);
+break;
+//Swapping elements
+case 5:
+try{
+System.out.println("Enter indices you want to swap: ");
+int index=input.nextInt();
+int index1=input.nextInt();
+Collections.swap(List1, index, index1);
+System.out.println("The list after swapping is: 
+"+List1);
+}
+catch(Exception e){
+System.out.println(e);
+}
+break;
+//Print List
+case 6:
+System.out.println(List1);
+break;
+//EXIT
+case 7:
+System.out.println("Thank You!");
+flag=0;
+System.exit(0);
+break;
+default:
+System.out.println("Enter correct choice.");
+break;
+}
+}
+}
+}
